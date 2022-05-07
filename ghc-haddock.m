@@ -40,4 +40,15 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Software.
+compiler.args   = '--make -static -fPIE -O2';
+compiler.hidir  = ['-hidir' ' ' 'build'];
+compiler.in     = '*.hs';
+compiler.odir   = ['-odir' ' ' 'build'];
+compiler.out    = ['./' 'cffreference'];
+compiler.self   = 'ghc';
+compiler.call   = [ compiler.self ' ' compiler.args ' ' compiler.hidir ' '   ...
+                    compiler.odir ' ' compiler.in ' -o ' compiler.out        ...
+                  ];
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
