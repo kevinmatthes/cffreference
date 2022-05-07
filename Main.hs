@@ -90,33 +90,6 @@ postprocess x@(l:ls)    | null x
 {------------------------------------------------------------------------------}
 
 {-|
-The processing function.
-
-It will check whether the given file contains a @preferred-citation@.  If so,
-the respective lines will be returned as result.  If not so, the lines will be
-returned unchanged.
--}
-
-process :: [String]                                                             -- ^ The lines to extract the preferred citation from.
-        -> [String]                                                             -- ^ The determined lines to cite.
-process ls  | null ls
-            = []
-
-            | "preferred-citation:" `elem` ls
-            = extract ls
-
-            | otherwise
-            = ls
-
-            where extract x@(l:ls)  | (not . null) x && take 0x1 l == " "
-                                    = l : extract ls
-
-                                    | otherwise
-                                    = []
-
-{------------------------------------------------------------------------------}
-
-{-|
 The preprocessing function.
 
 It will discard any pure comment and blank lines as well as:
@@ -148,5 +121,32 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
 
                                                     | otherwise
                                                     = ls
+
+{------------------------------------------------------------------------------}
+
+{-|
+The processing function.
+
+It will check whether the given file contains a @preferred-citation@.  If so,
+the respective lines will be returned as result.  If not so, the lines will be
+returned unchanged.
+-}
+
+process :: [String]                                                             -- ^ The lines to extract the preferred citation from.
+        -> [String]                                                             -- ^ The determined lines to cite.
+process ls  | null ls
+            = []
+
+            | "preferred-citation:" `elem` ls
+            = extract ls
+
+            | otherwise
+            = ls
+
+            where extract x@(l:ls)  | (not . null) x && take 0x1 l == " "
+                                    = l : extract ls
+
+                                    | otherwise
+                                    = []
 
 {------------------------------------------------------------------------------}
