@@ -40,6 +40,28 @@ import System.Environment
 {------------------------------------------------------------------------------}
 
 {-|
+The preprocessing function.
+
+It will discard any pure comment and blank lines as well as:
+
+- the @cff-version@ (since the target file will bring its own),
+- the @message@ (since the input file is going to be cited),
+- and the whole @references@ section (since the references of a reference do not
+  need to be referenced).
+-}
+
+preprocess  :: [String]                                                         -- ^ The lines to preprocess.
+            -> [String]                                                         -- ^ The remaining lines.
+preprocess []       = []
+preprocess (l:ls)   | take 0xC l == "cff-version:"
+                    = preprocess ls
+
+                    | otherwise
+                    = l : preprocess ls
+
+{------------------------------------------------------------------------------}
+
+{-|
 The main function.
 
 It controls the behaviour of the application and invokes the other functions as
@@ -52,7 +74,8 @@ main    :: IO ()                                                                
 main    = do    args <- getArgs
                 let argc = length args
                 case argc of
-                    0x1 -> return ()
+                    0x1 -> do   lines <- readFile $ head args
+                                putStrLn . preprocess $ lines
                     _   -> putStrLn "Usage: cffreference <file name>"
 
 
