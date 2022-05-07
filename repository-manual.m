@@ -77,7 +77,7 @@ files.newpage       = [directories.md 'newpage.md '];
 
 files.self          = ' repository-manual.m ';
 
-files.source        = ' ./authors.yaml ./project.yaml ';
+files.source        = ' ./project.yaml ';
 files.source        = [files.source directories.yaml manual.language '.yaml '];
 files.source        = [files.source directories.yaml manual.paper '.yaml '];
 files.source        = [files.source directories.yaml manual.style '.yaml '];
