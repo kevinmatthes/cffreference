@@ -65,4 +65,10 @@ haddock.call    = [ haddock.self ' ' haddock.args ' -o ' haddock.out ' '     ...
                     haddock.in                                               ...
                   ];
 
+
+
+% Miscellaneous.
+misc.self   = 'ghc-haddock.m';
+misc.banner = ['[ ' misc.self ' ] '];
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
