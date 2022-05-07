@@ -40,6 +40,12 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%
+%%
+%% Variables.
+%%
+%%%%
+
 % Software.
 compiler.args   = '--make -static -fPIE -O2';
 compiler.hidir  = ['-hidir' ' ' 'build'];
