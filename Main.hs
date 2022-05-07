@@ -93,7 +93,7 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     where skipReferences ls | null ls
                                             = []
 
-                                            |  take 0x1 . head $ ls == " "
+                                            | (take 0x1 . head) ls == " "
                                             = skipReferences . tail $ ls
 
                                             | otherwise
