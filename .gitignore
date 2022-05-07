@@ -41,9 +41,11 @@
 ################################################################################
 
 # Build artifacts.
+build/
 *.a
 *.bak
 *.dll
+*.hi
 *.lib
 *.o
 *.obj
@@ -55,6 +57,9 @@
 # Doxygen directories.
 html/
 latex/
+
+# Haddock directories.
+html/
 
 # LaTeX artifacts.
 *.aux
