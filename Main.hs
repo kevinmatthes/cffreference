@@ -40,6 +40,8 @@ The main function.
 
 It controls the behaviour of the application and invokes the other functions as
 required.
+
+The compiled application will always return with @0x0@.
 -}
 
 main    :: IO ()                                                                -- ^ This function returns nothing.
