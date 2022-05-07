@@ -50,6 +50,7 @@ build/
 *.o
 *.obj
 *.so
+cffreference
 
 # Documentation artifacts.
 *.pdf
