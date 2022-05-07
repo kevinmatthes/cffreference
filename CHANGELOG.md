@@ -48,6 +48,7 @@
 
 * add GPL 2.0 license
 * create `.gitignore`
+* create `Main.hs`
 * create repository README
 * create this changelog
 * create this repository
