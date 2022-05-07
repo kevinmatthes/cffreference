@@ -58,11 +58,11 @@ process ls  | null ls
             | otherwise
             = ls
 
-            where extract ls    | (not . null) ls && (take 0x1 . head) ls == " "
-                                = head ls : (extract . tail) ls
+            where extract x@(l:ls)  | (not . null) x && take 0x1 l == " "
+                                    = l : extract ls
 
-                                | otherwise
-                                = []
+                                    | otherwise
+                                    = []
 
 {------------------------------------------------------------------------------}
 
