@@ -82,6 +82,12 @@ misc.banner = ['[ ' misc.self ' ] '];
 % Begin build instruction.
 disp ([misc.banner 'Begin build instruction.']);
 
+% Compile Haskell code with GHC.
+disp ([misc.banner 'Compile application ' compiler.out ' with GHC ...']);
+disp (compiler.call);
+system (compiler.call);
+disp ([misc.banner 'Done.']);
+
 % End build instruction.
 disp ([misc.banner 'End build instruction.']);
 
