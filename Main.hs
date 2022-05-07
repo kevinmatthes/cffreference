@@ -35,6 +35,13 @@ module Main where
 
 {------------------------------------------------------------------------------}
 
+{-|
+The main function.
+
+It controls the behaviour of the application and invokes the other functions as
+required.
+-}
+
 main    :: IO ()
 main    = return ()
 
