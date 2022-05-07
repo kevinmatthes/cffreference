@@ -78,8 +78,8 @@ main    :: IO ()                                                                
 main    = do    args <- getArgs
                 let argc = length args
                 case argc of
-                    0x1 -> do   lines <- readFile $ head args
-                                putStrLn . preprocess $ lines
+                    0x1 -> do   text <- readFile $ head args
+                                putStrLn . unlines . preprocess . lines $ text
                     _   -> putStrLn "Usage: cffreference <file name>"
 
 
