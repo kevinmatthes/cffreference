@@ -71,4 +71,12 @@ haddock.call    = [ haddock.self ' ' haddock.args ' -o ' haddock.out ' '     ...
 misc.self   = 'ghc-haddock.m';
 misc.banner = ['[ ' misc.self ' ] '];
 
+
+
+%%%%
+%%
+%% Build steps.
+%%
+%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
