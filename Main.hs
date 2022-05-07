@@ -137,7 +137,10 @@ main    = do    args <- getArgs
                 let argc = length args
                 case argc of
                     0x1 -> do   text <- readFile $ head args
-                                putStr . unlines . preprocess . lines $ text
+                                putStr . unlines
+                                       . postprocess . process . preprocess
+                                       . lines
+                                       $ text
                     _   -> putStrLn "Usage: cffreference <file name>"
 
 
