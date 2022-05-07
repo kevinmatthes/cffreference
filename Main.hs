@@ -40,6 +40,26 @@ import System.Environment
 {------------------------------------------------------------------------------}
 
 {-|
+The finalisation.
+
+Before returning the results, the remaining lines will be indented appropriately
+in order to directly append them to the target @CITATION.cff@.
+-}
+
+postprocess :: [String]                                                         -- ^ The remaining lines.
+            -> [String]                                                         -- ^ The intended reference object.
+postprocess x@(l:ls)    | null x
+                        = []
+
+                        | take 0x2 l == "  "
+                        = "  - " ++ drop 0x2 l : map ("  " ++) ls
+
+                        | otherwise
+                        = "  - " ++ l : map ("    " ++) ls
+
+{------------------------------------------------------------------------------}
+
+{-|
 The processing function.
 
 It will check whether the given file contains a @preferred-citation@.  If so,
