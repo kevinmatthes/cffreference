@@ -47,6 +47,7 @@
 ### Added
 
 * add GPL 2.0 license
+* build instruction:  repository manual
 * create `.gitignore`
 * create `Main.hs`
 * create repository README
