@@ -40,6 +40,28 @@ import System.Environment
 {------------------------------------------------------------------------------}
 
 {-|
+The main function.
+
+It controls the behaviour of the application and invokes the other functions as
+required.
+
+The compiled application will always return with @0x0@.
+-}
+
+main    :: IO ()                                                                -- ^ This function returns nothing.
+main    = do    args <- getArgs
+                let argc = length args
+                case argc of
+                    0x1 -> do   text <- readFile $ head args
+                                putStr . unlines
+                                       . postprocess . process . preprocess
+                                       . lines
+                                       $ text
+                    _   -> putStrLn "Usage: cffreference <file name>"
+
+{------------------------------------------------------------------------------}
+
+{-|
 The finalisation.
 
 Before returning the results, the remaining lines will be indented appropriately
@@ -118,28 +140,5 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
 
                                                     | otherwise
                                                     = ls
-
-{------------------------------------------------------------------------------}
-
-{-|
-The main function.
-
-It controls the behaviour of the application and invokes the other functions as
-required.
-
-The compiled application will always return with @0x0@.
--}
-
-main    :: IO ()                                                                -- ^ This function returns nothing.
-main    = do    args <- getArgs
-                let argc = length args
-                case argc of
-                    0x1 -> do   text <- readFile $ head args
-                                putStr . unlines
-                                       . postprocess . process . preprocess
-                                       . lines
-                                       $ text
-                    _   -> putStrLn "Usage: cffreference <file name>"
-
 
 {------------------------------------------------------------------------------}
