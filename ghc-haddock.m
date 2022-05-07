@@ -82,8 +82,15 @@ misc.banner = ['[ ' misc.self ' ] '];
 % Begin build instruction.
 disp ([misc.banner 'Begin build instruction.']);
 
+% Clean outdated compilation.
+if length (glob (compiler.out));
+    fprintf ([misc.banner 'Remove outdated compilation ... ']);
+    delete (compiler.out);
+    disp (compiler.out);
+end;
+
 % Compile Haskell code with GHC.
-disp ([misc.banner 'Compile application ' compiler.out ' with GHC ...']);
+disp ([misc.banner 'Compile ' compiler.out ' with GHC ...']);
 disp (compiler.call);
 system (compiler.call);
 disp ([misc.banner 'Done.']);
