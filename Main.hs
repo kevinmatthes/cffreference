@@ -18,10 +18,12 @@
 
 {-|
 Module:      Main
-Description: The main source file of this project.
 Copyright:   (C) 2022 Kevin Matthes
+License:     GPL 2.0
+Maintainer:  Kevin Matthes
 Stability:   develop
 Portability: any
+Description: The main source file of this project.
 
 A simple application in order to extract citation information from a given CFF
 file.
