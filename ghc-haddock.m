@@ -19,10 +19,10 @@
 %%%%
 %%
 %%  FILE
-%%      .m
+%%      ghc-haddock.m
 %%
 %%  BRIEF
-%%      .
+%%      Compile a Haskell application together with its documentation.
 %%
 %%  AUTHOR
 %%      Kevin Matthes
