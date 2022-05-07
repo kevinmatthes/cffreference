@@ -47,6 +47,7 @@
 ### Added
 
 * add GPL 2.0 license
+* create `.gitignore`
 * create repository README
 * create this changelog
 * create this repository
