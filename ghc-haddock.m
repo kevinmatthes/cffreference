@@ -88,6 +88,14 @@ disp (compiler.call);
 system (compiler.call);
 disp ([misc.banner 'Done.']);
 
+% Compile Haddock documentation, if possible.
+if length (glob (compiler.out));
+    disp ([misc.banner 'Compile Haddock documentation ...']);
+    disp (haddock.call);
+    system (haddock.call);
+    disp ([misc.banner 'Done.']);
+end;
+
 % End build instruction.
 disp ([misc.banner 'End build instruction.']);
 
