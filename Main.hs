@@ -57,8 +57,20 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     || take 0x1 l == "#" || null l
                     = preprocess ls
 
+                    | take 0xB l == "references:"
+                    = skipReferences ls
+
                     | otherwise
                     = l : preprocess ls
+
+                    where skipReferences ls | null ls
+                                            = []
+
+                                            |  take 0x1 . head $ ls == " "
+                                            = skipReferences . drop 0x1 $ ls
+
+                                            | otherwise
+                                            = ls
 
 {------------------------------------------------------------------------------}
 
