@@ -79,8 +79,10 @@ It will discard any pure comment and blank lines as well as:
 
 preprocess  :: [String]                                                         -- ^ The lines to preprocess.
             -> [String]                                                         -- ^ The remaining lines.
-preprocess []       = []
-preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
+preprocess x@(l:ls) | null x
+                    = []
+
+                    |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     || take 0x1 l == "#" || null l
                     = preprocess ls
 
@@ -90,14 +92,14 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     | otherwise
                     = l : preprocess ls
 
-                    where skipReferences ls | null ls
-                                            = []
+                    where skipReferences x@(l:ls)   | null ls
+                                                    = []
 
-                                            | (take 0x1 . head) ls == " "
-                                            = skipReferences . tail $ ls
+                                                    | take 0x1 l == " "
+                                                    = skipReferences ls
 
-                                            | otherwise
-                                            = ls
+                                                    | otherwise
+                                                    = ls
 
 {------------------------------------------------------------------------------}
 
