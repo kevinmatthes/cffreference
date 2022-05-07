@@ -49,6 +49,11 @@ The compiled application will always return with @0x0@.
 -}
 
 main    :: IO ()                                                                -- ^ This function returns nothing.
-main    = return ()
+main    = do    args <- getArgs
+                let argc = length args
+                case argc of
+                    0x1 -> return ()
+                    _   -> putStrLn "Usage: cffreference <file name>"
+
 
 {------------------------------------------------------------------------------}
