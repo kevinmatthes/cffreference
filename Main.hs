@@ -17,15 +17,15 @@
  -}
 
 {-|
- - Module:      Main
- - Description: The main source file of this project.
- - Copyright:   (C) 2022 Kevin Matthes
- - Stability:   develop
- - Portability: any
- -
- - A simple application in order to extract citation information from a given
- - CFF file.
- -}
+Module:      Main
+Description: The main source file of this project.
+Copyright:   (C) 2022 Kevin Matthes
+Stability:   develop
+Portability: any
+
+A simple application in order to extract citation information from a given CFF
+file.
+-}
 
 module Main where
 
