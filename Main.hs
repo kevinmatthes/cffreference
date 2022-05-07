@@ -53,7 +53,11 @@ It will discard any pure comment and blank lines as well as:
 preprocess  :: [String]                                                         -- ^ The lines to preprocess.
             -> [String]                                                         -- ^ The remaining lines.
 preprocess []       = []
-preprocess (l:ls)   | take 0xC l == "cff-version:"
+preprocess (l:ls)   |  take 0xC l == "cff-version:"
+                    || take 0x8 l == "message:"
+                    || head l == '#'
+                    || head l == '\n'
+                    || l == "\r\n"
                     = preprocess ls
 
                     | otherwise
