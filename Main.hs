@@ -57,6 +57,13 @@ main    = do    args <- getArgs
                                        . postprocess . process . preprocess
                                        . lines
                                        $ text
+                    0x2 -> do   text <- readFile $ head args
+                                appendFile (args !! 0x1)
+                                           unlines . postprocess
+                                                   . process
+                                                   . preprocess
+                                                   . lines
+                                                   $ text
                     _   -> putStrLn "Usage: cffreference <file name>"
 
 {------------------------------------------------------------------------------}
