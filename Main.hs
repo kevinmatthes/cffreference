@@ -42,7 +42,7 @@ It controls the behaviour of the application and invokes the other functions as
 required.
 -}
 
-main    :: IO ()
+main    :: IO ()                                                                -- ^ This function returns nothing.
 main    = return ()
 
 {------------------------------------------------------------------------------}
