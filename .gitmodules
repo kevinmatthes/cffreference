@@ -1,3 +1,6 @@
 [submodule "docs-snippets"]
 	path = docs-snippets
 	url = https://github.com/kevinmatthes/docs-snippets
+[submodule "routines"]
+	path = routines
+	url = https://github.com/kevinmatthes/routines
