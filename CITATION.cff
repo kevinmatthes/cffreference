@@ -42,19 +42,20 @@
 
 # Parser settings.
 cff-version: 1.2.0
-
-# List of authors.
-authors:
-  - family-names: ""
-    given-names:  ""
-
-# Project information.
-title:    ""
-subtitle: ""
-url:      ""
+message: Please cite this software using these meta data.
 
 # Version information.
-date-released:  YYYY-MM-DD
-version:        0.0.0
+date-released: 2022-05-08
+version: 0.1
+
+# Project information.
+abstract: A simple CLI to extract citation information from a CITATION.cff.
+authors:
+  - family-names: Matthes
+    given-names: Kevin
+license: GPL-2.0
+repository-code: https://github.com/kevinmatthes/cffreference
+title: cffreference
+url: https://github.com/kevinmatthes/cffreference
 
 ################################################################################
