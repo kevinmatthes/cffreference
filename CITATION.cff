@@ -116,3 +116,53 @@ references:
     license: "CC-BY-4.0"
     doi: 10.5281/zenodo.5171937
     type: standard
+  - abstract: Command line program to validate and convert CITATION.cff files.
+    authors:
+      - affiliation: Netherlands eScience Center
+        family-names: Spaaks
+        given-names: Jurriaan H.
+        orcid: https://orcid.org/0000-0002-7064-4069
+      - affiliation: Netherlands eScience Center
+        family-names: Klaver
+        given-names: Tom
+      - affiliation: Netherlands eScience Center
+        family-names: Verhoeven
+        given-names: Stefan
+        orcid: https://orcid.org/0000-0002-5821-2060
+      - affiliation: Humboldt-Universität zu Berlin
+        family-names: Druskat
+        given-names: Stephan
+        orcid: https://orcid.org/0000-0003-4925-7248
+      - affiliation: University of Oslo
+        family-names: Leoncio
+        given-names: Waldir
+        name-suffix: Netto
+    date-released: 2021-09-22
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1162057
+        description: Persistent identifier for all versions of cffconvert
+      - type: doi
+        value: 10.5281/zenodo.5521767
+        description: Persistent identifier for this version of cffconvert
+      - type: url
+        value: https://github.com/citation-file-format/cff-converter-python
+        description: URL to the GitHub repository for cffconvert
+      - type: url
+        value: https://pypi.org/project/cffconvert
+        description: cffconvert on PyPI
+    keywords:
+      - bibliography
+      - BibTeX
+      - cff
+      - citation
+      - CITATION.cff
+      - CodeMeta
+      - EndNote
+      - RIS
+      - Citation File Format
+    license: Apache-2.0
+    repository-artifact: https://pypi.org/project/cffconvert
+    repository-code: https://github.com/citation-file-format/cff-converter-python
+    title: cffconvert
+    version: 2.0.0
