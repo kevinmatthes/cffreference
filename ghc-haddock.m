@@ -47,7 +47,7 @@
 %%%%
 
 % Software.
-compiler.args   = '--make -static -fPIE -O2';
+compiler.args   = '--make -static -fasm -fPIE -O2';
 compiler.hidir  = ['-hidir' ' ' 'build'];
 compiler.in     = '*.hs';
 compiler.odir   = ['-odir' ' ' 'build'];
