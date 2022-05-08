@@ -166,3 +166,4 @@ references:
     repository-code: https://github.com/citation-file-format/cff-converter-python
     title: cffconvert
     version: 2.0.0
+    type: software
