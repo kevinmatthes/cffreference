@@ -47,8 +47,8 @@
 %%%%
 
 % Software.
-octave.in   = ['' '.m'];
-octave.out  = ['./' ''];
+octave.in   = ['ghc-haddock' '.m'];
+octave.out  = ['./' 'cffreference'];
 octave.self = 'octave';
 octave.call = [octave.self ' ' octave.in];
 
