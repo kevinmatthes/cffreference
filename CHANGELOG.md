@@ -52,6 +52,7 @@
 * build instruction:  repository manual
 * create `.gitignore`
 * create `Main.hs`
+* create project meta data for repository manual
 * create repository README
 * create this changelog
 * create this repository
