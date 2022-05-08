@@ -116,7 +116,8 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     where skipReferences x@(l:ls)   | null ls
                                                     = []
 
-                                                    | take 0x1 l == " "
+                                                    |  take 0x1 l == " "
+                                                    || take 0x1 l == "-"
                                                     = skipReferences ls
 
                                                     | otherwise
