@@ -48,6 +48,7 @@
 
 * add GPL 2.0 license
 * build instruction:  GHC and Haddock compilation
+* build instruction:  installation
 * build instruction:  repository manual
 * create `.gitignore`
 * create `Main.hs`
