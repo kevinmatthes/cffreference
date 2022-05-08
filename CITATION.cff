@@ -190,3 +190,4 @@ references:
     license: Apache-2.0
     repository-artifact: https://rubygems.org/gems/cff
     repository-code: https://github.com/citation-file-format/ruby-cff
+    type: software-code
