@@ -61,7 +61,6 @@ url: https://github.com/kevinmatthes/cffreference
 
 # References.
 references:
-################################################################################
   - abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
     authors:
       - family-names: Druskat
@@ -191,3 +190,5 @@ references:
     repository-artifact: https://rubygems.org/gems/cff
     repository-code: https://github.com/citation-file-format/ruby-cff
     type: software-code
+
+################################################################################
