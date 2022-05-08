@@ -61,7 +61,8 @@ url: https://github.com/kevinmatthes/cffreference
 
 # References.
 references:
-  - abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
+  - type: standard
+    abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
     authors:
       - family-names: Druskat
         given-names: Stephan
@@ -114,8 +115,8 @@ references:
       - credit
     license: "CC-BY-4.0"
     doi: 10.5281/zenodo.5171937
-    type: standard
-  - abstract: Command line program to validate and convert CITATION.cff files.
+  - type: software
+    abstract: Command line program to validate and convert CITATION.cff files.
     authors:
       - affiliation: Netherlands eScience Center
         family-names: Spaaks
@@ -165,8 +166,8 @@ references:
     repository-code: https://github.com/citation-file-format/cff-converter-python
     title: cffconvert
     version: 2.0.0
-    type: software
-  - title: Ruby CFF Library
+  - type: software-code
+    title: Ruby CFF Library
     abstract: This library provides a Ruby interface to manipulate Citation File Format files
     authors:
     - family-names: Haines
@@ -189,7 +190,6 @@ references:
     license: Apache-2.0
     repository-artifact: https://rubygems.org/gems/cff
     repository-code: https://github.com/citation-file-format/ruby-cff
-    type: software-code
   - type: manual
     title: "GNU Octave version 7.1.0 manual: a high-level interactive language for numerical computations"
     authors:
