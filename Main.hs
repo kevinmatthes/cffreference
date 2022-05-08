@@ -42,7 +42,7 @@ existing, readable and writable file.  The input will be processed as in the
 default case.  But in contrast, the lines to cite will be appended at the end of
 the given output file.
 
-If no or more than arguments are given, the application will show a brief
+If no or more than two arguments are given, the application will show a brief
 information on how to pass the arguments and quit.
 
 This application always terminates with code @0x0@.
