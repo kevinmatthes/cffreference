@@ -66,7 +66,7 @@ main    = do    args <- getArgs
                                              . preprocess
                                              . lines
                                              ) text
-                    _   -> putStrLn "Usage: cffreference <file name>"
+                    _   -> putStrLn "Usage: cffreference <input> [output]"
 
 {------------------------------------------------------------------------------}
 
