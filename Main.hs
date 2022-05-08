@@ -29,6 +29,23 @@ Description: The main source file of this project.
 
 A simple application in order to extract citation information from a given CFF
 file.
+
+The application itself accepts one or two arguments which will be interpreted as
+the paths to existing, readable and valid CFF files.  The first argument will
+always be treated as the input file.  It will be evaluated in order to determine
+the lines to cite in the target @CITATION.cff@.  The lines to cite will be
+written to @stdout@, by default, such that the content can be piped around in a
+terminal session.
+
+If the optional second argument is given, it will be treated as the path to an
+existing, readable and writable file.  The input will be processed as in the
+default case.  But in contrast, the lines to cite will be appended at the end of
+the given output file.
+
+If no or more than arguments are given, the application will show a brief
+information on how to pass the arguments and quit.
+
+This application always terminates with code @0x0@.
 -}
 
 module Main where
