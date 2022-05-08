@@ -190,5 +190,18 @@ references:
     repository-artifact: https://rubygems.org/gems/cff
     repository-code: https://github.com/citation-file-format/ruby-cff
     type: software-code
+  - type: manual
+    title: "GNU Octave version 7.1.0 manual: a high-level interactive language for numerical computations"
+    authors:
+      - family-names: Eaton
+        given-names: John W.
+      - family-names: Bateman
+        given-names: David
+      - family-names: Hauberg
+        given-names: "Søren"
+      - family-names: Wehbring
+        given-names: Rik
+    year: 2022
+    url: https://www.gnu.org/software/octave/doc/v7.1.0/
 
 ################################################################################
