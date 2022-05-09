@@ -141,7 +141,12 @@ main    :: IO ()                                                                
 main    = do    args <- getArgs
                 let argc = length args
                 case argc of
-                    0x1 -> do   text <- readFile $ head args
+                    0x1 -> do   text <- catch   [ isAlreadyInUseError
+                                                , isDoesNotExistError
+                                                , isPermissionError
+                                                ]
+                                                (readFile $ head args)
+                                                []
                                 putStr  . unlines
                                         . postprocess . process . preprocess
                                         . lines
