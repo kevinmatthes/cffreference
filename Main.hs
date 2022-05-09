@@ -166,7 +166,7 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     = preprocess ls
 
                     | take 0xB l == "references:"
-                    = skipReferences ls
+                    = preprocess . skipReferences $ ls
 
                     | otherwise
                     = l : preprocess ls
