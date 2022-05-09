@@ -54,6 +54,19 @@ module Main where
 
 -- Haskell standard library.
 import System.Environment
+import System.IO.Error
+
+{------------------------------------------------------------------------------}
+
+{-|
+Exceptions in Haskell are limited regarding their reason.  Hence, the language
+offers several testing functions in order to determine which cause a given
+exception has.
+
+This type definition is an alias for the exception type testing functions' type.
+-}
+
+type Exception  = IOError -> Bool
 
 {------------------------------------------------------------------------------}
 
