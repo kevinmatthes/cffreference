@@ -58,6 +58,45 @@ import System.Environment
 {------------------------------------------------------------------------------}
 
 {-|
+The license information function.
+
+It will write the license information of this application to @stdout@.
+-}
+
+license :: IO ()                                                                -- ^ This function returns nothing.
+license = putStrLn  $  "{----------------------- GNU General Public License 2.0"
+                    ++ " -----------------------]\n|                           "
+                    ++ "                                                   |\n|"
+                    ++ " Copyright (C) 2022 Kevin Matthes                      "
+                    ++ "                       |\n|                            "
+                    ++ "                                                  |\n| "
+                    ++ "This program is free software; you can redistribute it "
+                    ++ "and/or modify         |\n| it under the terms of the GN"
+                    ++ "U General Public License as published by         |\n| t"
+                    ++ "he Free Software Foundation; either version 2 of the Li"
+                    ++ "cense, or            |\n| (at your option) any later ve"
+                    ++ "rsion.                                          |\n|   "
+                    ++ "                                                       "
+                    ++ "                    |\n| This program is distributed in"
+                    ++ " the hope that it will be useful,              |\n| but"
+                    ++ " WITHOUT ANY WARRANTY; without even the implied warrant"
+                    ++ "y of               |\n| MERCHANTABILITY or FITNESS FOR "
+                    ++ "A PARTICULAR PURPOSE.  See the                |\n| GNU "
+                    ++ "General Public License for more details.               "
+                    ++ "                  |\n|                                 "
+                    ++ "                                             |\n| You s"
+                    ++ "hould have received a copy of the GNU General Public Li"
+                    ++ "cense along      |\n| with this program; if not, write "
+                    ++ "to the Free Software Foundation, Inc.,      |\n| 51 Fra"
+                    ++ "nklin Street, Fifth Floor, Boston, MA 02110-1301 USA.  "
+                    ++ "                |\n|                                   "
+                    ++ "                                           |\n[--------"
+                    ++ "-------------------------------------------------------"
+                    ++ "---------------}\n"
+
+{------------------------------------------------------------------------------}
+
+{-|
 The main function.
 
 It controls the behaviour of the application and invokes the other functions as
@@ -71,19 +110,20 @@ main    = do    args <- getArgs
                 let argc = length args
                 case argc of
                     0x1 -> do   text <- readFile $ head args
-                                putStr . unlines
-                                       . postprocess . process . preprocess
-                                       . lines
-                                       $ text
+                                putStr  . unlines
+                                        . postprocess . process . preprocess
+                                        . lines
+                                        $ text
                     0x2 -> do   text <- readFile $ head args
-                                appendFile (args !! 0x1)
-                                           $ ( unlines
-                                             . postprocess
-                                             . process
-                                             . preprocess
-                                             . lines
-                                             ) text
-                    _   -> putStrLn "Usage: cffreference <input> [output]"
+                                appendFile  (args !! 0x1)
+                                            $   ( unlines
+                                                . postprocess
+                                                . process
+                                                . preprocess
+                                                . lines
+                                                ) text
+                    _   -> do   license
+                                usage
 
 {------------------------------------------------------------------------------}
 
@@ -167,5 +207,23 @@ process ls  | null ls
 
                                     | otherwise
                                     = []
+
+{------------------------------------------------------------------------------}
+
+{-|
+This is the usage information function.
+
+It will write a brief usage information to @stdout@.
+-}
+
+usage   :: IO ()                                                                -- ^ This function returns nothing.
+usage   = putStrLn  $  "{----------------------------- CFFREFERENCE USAGE -----"
+                    ++ "------------------------]\n|                           "
+                    ++ "                                                   |\n|"
+                    ++ " cffreference <input file name> [output file name]     "
+                    ++ "                       |\n|                            "
+                    ++ "                                                  |\n[-"
+                    ++ "-------------------------------------------------------"
+                    ++ "----------------------}\n"
 
 {------------------------------------------------------------------------------}
