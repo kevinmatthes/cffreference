@@ -51,6 +51,7 @@
 ### Changed
 
 * optimise repository manual build instruction
+* update `docs-snippets`
 
 ### Fixed
 
