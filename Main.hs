@@ -79,10 +79,10 @@ they should occur.
 If an exception should not match the one of given reasons, it will be rethrown.
 -}
 
-catch   :: [Exception]                                                          -- The exceptions to catch.
-        -> IO a                                                                 -- The function which is expected to throw an exception.
-        -> a                                                                    -- The default value in case of an exception.
-        -> IO a                                                                 -- The result; either the default or the actual value.
+catch   :: [Exception]                                                          -- ^ The exceptions to catch.
+        -> IO a                                                                 -- ^ The function which is expected to throw an exception.
+        -> a                                                                    -- ^ The default value in case of an exception.
+        -> IO a                                                                 -- ^ The result; either the default or the actual value.
 catch [ ]    f _    = f
 catch [e]    f d    = catchIOError f (\x -> if e x then return d else ioError x)
 catch (e:es) f d    = catch es (catch [e] f d) d
