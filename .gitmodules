@@ -4,3 +4,6 @@
 [submodule "routines"]
 	path = routines
 	url = https://github.com/kevinmatthes/routines
+[submodule "blank"]
+	path = blank
+	url = https://github.com/kevinmatthes/blank
