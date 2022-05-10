@@ -46,61 +46,38 @@
 %%
 %%%%
 
-% Settings.
-manual.language = 'British';
-manual.paper    = 'a4-3x3-duplex';
-manual.style    = 'scrartcl';
-
-
-
-% Software.
-software.compiler.self  = ' pandoc ';
-software.compiler.flags = ' -N ';
-software.compiler.call  = [software.compiler.self software.compiler.flags];
-
-
-
 % Directories.
 directories.md      = './docs-snippets/markdown/';
 directories.yaml    = './docs-snippets/yaml/';
 
-
+% Settings.
+settings.language   = [directories.yaml 'British'       '.yaml'];
+settings.paper      = [directories.yaml 'a4-3x3-duplex' '.yaml'];
+settings.style      = [directories.yaml 'scrartcl'      '.yaml'];
 
 % Files.
-files.code.begin    = [directories.md 'begin-code.md '];
-files.code.end      = [directories.md 'end-code.md '];
+files.code.begin    = [directories.md 'begin-code.md'];
+files.code.end      = [directories.md 'end-code.md'];
+files.license       = [ directories.md 'heading-license.md'              ' ' ...
+                        files.code.begin ' ' './LICENSE' ' ' files.code.end  ...
+                      ];
+files.newpage       = [directories.md 'newpage.md'];
 
-files.license       = [files.code.begin ' ./LICENSE ' files.code.end];
-files.license       = [directories.md 'heading-license.md ' files.license];
+% Software.
+pandoc.args = '-N';
+pandoc.in   = [ './project.yaml'                                         ' ' ...
+                settings.language ' ' settings.paper ' ' settings.style  ' ' ...
+                files.newpage ' ' './'                  'README.md'      ' ' ...
+                files.newpage ' ' files.license                          ' ' ...
+                files.newpage ' ' './CHANGELOG.md'                       ' ' ...
+              ];
+pandoc.out  = 'repository.pdf';
+pandoc.self = 'pandoc';
+pandoc.call = [pandoc.self ' ' pandoc.args ' -o ' pandoc.out ' ' pandoc.in];
 
-files.newpage       = [directories.md 'newpage.md '];
-
-files.self          = ' repository-manual.m ';
-
-files.source        = ' ./project.yaml ';
-files.source        = [files.source directories.yaml manual.language '.yaml '];
-files.source        = [files.source directories.yaml manual.paper '.yaml '];
-files.source        = [files.source directories.yaml manual.style '.yaml '];
-files.source        = [files.source files.newpage];
-files.source        = [files.source ' ./README.md '];
-files.source        = [files.source files.newpage];
-files.source        = [files.source files.license];
-files.source        = [files.source files.newpage];
-files.source        = [files.source ' ./CHANGELOG.md '];
-files.source        = [files.source files.newpage];
-
-files.target        = ' repository.pdf ';
-
-
-
-% Control flow.
-banner  = ['[' files.self '] '];
-
-
-
-% Call adjustment.
-software.compiler.call  = [software.compiler.call files.source];
-software.compiler.call  = [software.compiler.call ' -o ' files.target];
+% Miscellaneous.
+misc.self   = 'repository-manual.m';
+misc.banner = ['[ ' misc.self ' ] '];
 
 
 
@@ -111,21 +88,15 @@ software.compiler.call  = [software.compiler.call ' -o ' files.target];
 %%%%
 
 % Begin build instruction.
-disp ([banner 'Begin build instruction.']);
-
-
+disp ([misc.banner 'Begin build instruction.']);
 
 % Call Pandoc.
-disp ([banner 'Compile Pandoc documentation ...']);
-
-disp (software.compiler.call);
-system (software.compiler.call);
-
-disp ([banner 'Done.']);
-
-
+disp ([misc.banner 'Compile Pandoc documentation ...']);
+disp (pandoc.call);
+system (pandoc.call);
+disp ([misc.banner 'Done.']);
 
 % End build instruction.
-disp ([banner 'End build instruction.']);
+disp ([misc.banner 'End build instruction.']);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
