@@ -50,6 +50,7 @@
 
 ### Changed
 
+* optimise `.gitignore`
 * optimise repository manual build instruction
 * update `docs-snippets`
 
