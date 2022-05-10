@@ -151,7 +151,12 @@ main    = do    args <- getArgs
                                         . postprocess . process . preprocess
                                         . lines
                                         $ text
-                    0x2 -> do   text <- readFile $ head args
+                    0x2 -> do   text <- catch   [ isAlreadyInUseError
+                                                , isDoesNotExistError
+                                                , isPermissionError
+                                                ]
+                                                (readFile $ head args)
+                                                []
                                 appendFile  (args !! 0x1)
                                             $   ( unlines
                                                 . postprocess
