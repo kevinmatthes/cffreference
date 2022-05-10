@@ -55,6 +55,7 @@
 ### Fixed
 
 * add missing `catch`
+* docstrings which are not cited
 * obsolete line in `CITATION.cff`
 
 ## [0.1] -- 2022-05-09
