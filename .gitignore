@@ -55,12 +55,9 @@ cffreference
 # Documentation artifacts.
 *.pdf
 
-# Doxygen directories.
+# Doxygen / Haddock directories.
 html/
 latex/
-
-# Haddock directories.
-html/
 
 # LaTeX artifacts.
 *.aux
