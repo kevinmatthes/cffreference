@@ -44,6 +44,11 @@
 
 ## [Unreleased]
 
+### Added
+
+* cite `blank`
+* cite `docs-snippets`
+
 ### Changed
 
 * update `blank`
