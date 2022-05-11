@@ -44,6 +44,11 @@
 
 ## [Unreleased]
 
+### Changed
+
+* update `blank`
+* update `docs-snippets`
+
 ### Fixed
 
 * insufficient patterns for skipping references
