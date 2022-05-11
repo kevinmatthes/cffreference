@@ -215,3 +215,14 @@ references:
     repository-artifact: https://github.com/kevinmatthes/blank
     title: blank
     url: https://github.com/kevinmatthes/blank
+  - type: generic
+    date-released: 2022-05-11
+    version: 0.0.0
+    abstract: A collection of common documentation configuration files.
+    authors:
+      - family-names: Matthes
+        given-names: Kevin
+    license: GPL-2.0
+    repository-artifact: https://github.com/kevinmatthes/docs-snippets
+    title: docs-snippets
+    url: https://github.com/kevinmatthes/docs-snippets
