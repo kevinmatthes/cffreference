@@ -45,8 +45,8 @@ cff-version: 1.2.0
 message: Please cite this software using these meta data.
 
 # Version information.
-date-released: 2022-05-09
-version: 0.1
+date-released: 2022-05-11
+version: 0.3
 
 # Project information.
 abstract: A simple CLI to extract citation information from a CITATION.cff.
