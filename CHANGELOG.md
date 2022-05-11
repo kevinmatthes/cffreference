@@ -44,6 +44,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+* insufficient patterns for skipping references
+
 ## [0.2] -- 2022-05-10
 
 ### Added
