@@ -44,6 +44,8 @@
 
 ## [Unreleased]
 
+## [0.3] -- 2022-05-11
+
 ### Added
 
 * cite `blank`
