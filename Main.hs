@@ -196,12 +196,12 @@ in order to directly append them to the target @CITATION.cff@.
 
 postprocess :: [String]                                                         -- ^ The remaining lines.
             -> [String]                                                         -- ^ The intended reference object.
-postprocess []      = []
-postprocess x@(l:_) | take 0x2 l == "  "
-                    = "  - type: generic" : map ("  " ++) x
+postprocess []          = []
+postprocess x@(l:ls)    | take 0x2 l == "  "
+                        = ((++) "  - " . drop 0x2 $ l) : map ("  " ++) ls
 
-                    | otherwise
-                    = "  - type: generic" : map ("    " ++) x
+                        | otherwise
+                        = "  - type: generic" : map ("    " ++) x
 
 {------------------------------------------------------------------------------}
 
