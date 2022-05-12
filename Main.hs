@@ -97,13 +97,20 @@ instead of the other meta data, by default.  This function will extract it.
 -}
 
 extract :: [String]                                                             -- ^ The input to optimise.
+        -> Bool                                                                 -- ^ The preferred citation is already reached.
         -> [String]                                                             -- ^ The lines to cite.
-extract []      = []
-extract (l:ls)  | take 0x1 l == " "
-                = l : extract ls
+extract []     _    = []
+extract (l:ls) b    | b && take 0x2 l == "  "
+                    = l : extract ls True
 
-                | otherwise
-                = []
+                    | b && take 0x2 l /= "  "
+                    = extract ls False
+
+                    | not b && take 0x13 l == "preferred-citation:"
+                    = extract ls True
+
+                    | otherwise
+                    = extract ls False
 
 {------------------------------------------------------------------------------}
 
@@ -201,7 +208,7 @@ postprocess x@(l:ls)    | take 0x2 l == "  "
                         = ((++) "  - " . drop 0x2 $ l) : map ("  " ++) ls
 
                         | otherwise
-                        = "  - type: generic" : map ("    " ++) x
+                        = "  - type: software" : map ("    " ++) x
 
 {------------------------------------------------------------------------------}
 
