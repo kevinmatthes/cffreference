@@ -97,7 +97,7 @@ instead of the other meta data, by default.  This function will extract it.
 -}
 
 extract :: [String]                                                             -- ^ The input to optimise.
-        -> Bool                                                                 -- ^ The preferred citation is already reached.
+        -> Bool                                                                 -- ^ Whether the preferred citation is already reached.
         -> [String]                                                             -- ^ The lines to cite.
 extract []     _    = []
 extract (l:ls) b    | b && take 0x2 l == "  "
