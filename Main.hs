@@ -243,7 +243,7 @@ process :: [String]                                                             
         -> [String]                                                             -- ^ The determined lines to cite.
 process []  = []
 process ls  | "preferred-citation:" `elem` ls
-            = extract ls
+            = extract ls False
 
             | otherwise
             = ls
