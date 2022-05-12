@@ -47,6 +47,8 @@
 ### Changed
 
 * optimise comment banners of `CITATION.cff`
+* outsource `extract` to a dedicated function
+* outsource `skipReferences` to a dedicated function
 
 ### Fixed
 
