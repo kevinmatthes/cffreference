@@ -44,6 +44,8 @@
 
 ## [Unreleased]
 
+## [0.4] -- 2022-05-12
+
 ### Changed
 
 * apply the configured type of the `preferred-citation`
