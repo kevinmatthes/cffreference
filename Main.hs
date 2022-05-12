@@ -178,10 +178,8 @@ in order to directly append them to the target @CITATION.cff@.
 
 postprocess :: [String]                                                         -- ^ The remaining lines.
             -> [String]                                                         -- ^ The intended reference object.
-postprocess x@(l:_) | null x
-                    = []
-
-                    | take 0x2 l == "  "
+postprocess []      = []
+postprocess x@(l:_) | take 0x2 l == "  "
                     = "  - type: generic" : map ("  " ++) x
 
                     | otherwise
@@ -233,16 +231,15 @@ returned unchanged.
 
 process :: [String]                                                             -- ^ The lines to extract the preferred citation from.
         -> [String]                                                             -- ^ The determined lines to cite.
-process ls  | null ls
-            = []
-
-            | "preferred-citation:" `elem` ls
+process []  = []
+process ls  | "preferred-citation:" `elem` ls
             = extract ls
 
             | otherwise
             = ls
 
-            where extract x@(l:ls)  | (not . null) x && take 0x1 l == " "
+            where extract []        = []
+                  extract (l:ls)    | take 0x1 l == " "
                                     = l : extract ls
 
                                     | otherwise
