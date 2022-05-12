@@ -44,6 +44,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+* optimise comment banners of `CITATION.cff`
+
+### Fixed
+
+* add missing patterns in `Main.hs`
+
 ## [0.3] -- 2022-05-11
 
 ### Added
