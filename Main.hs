@@ -211,14 +211,6 @@ preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     | otherwise
                     = l : preprocess ls
 
-                    where   skipReferences []       = []
-                            skipReferences x@(l:ls) |  take 0x1 l == " "
-                                                    || take 0x1 l == "-"
-                                                    = skipReferences ls
-
-                                                    | otherwise
-                                                    = x
-
 {------------------------------------------------------------------------------}
 
 {-|
@@ -244,6 +236,25 @@ process ls  | "preferred-citation:" `elem` ls
 
                                     | otherwise
                                     = []
+
+{------------------------------------------------------------------------------}
+
+{-|
+Skip the references.
+
+Since the references of a reference do not need to be referenced when
+referencing the reference in the @references@ section, they will be removed from
+the input by this function.
+-}
+
+skipReferences  :: [String]                                                     -- ^ The input lines to optimise.
+                -> [String]                                                     -- ^ The remaining lines.
+skipReferences []       = []
+skipReferences x@(l:ls) | take 0x1 l == " " || take 0x1 l == "-"
+                        = skipReferences ls
+
+                        | otherwise
+                        = x
 
 {------------------------------------------------------------------------------}
 
