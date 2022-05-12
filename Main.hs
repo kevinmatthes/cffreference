@@ -90,6 +90,24 @@ catch (e:es) f d    = catch es (catch [e] f d) d
 {------------------------------------------------------------------------------}
 
 {-|
+The extraction of a @preferred-citation@.
+
+In case the input file should specify a @preferred-citation@, it will be used
+instead of the other meta data, by default.  This function will extract it.
+-}
+
+extract :: [String]                                                             -- ^ The input to optimise.
+        -> [String]                                                             -- ^ The lines to cite.
+extract []      = []
+extract (l:ls)  | take 0x1 l == " "
+                = l : extract ls
+
+                | otherwise
+                = []
+
+{------------------------------------------------------------------------------}
+
+{-|
 The license information function.
 
 It will write the license information of this application to @stdout@.
@@ -229,13 +247,6 @@ process ls  | "preferred-citation:" `elem` ls
 
             | otherwise
             = ls
-
-            where extract []        = []
-                  extract (l:ls)    | take 0x1 l == " "
-                                    = l : extract ls
-
-                                    | otherwise
-                                    = []
 
 {------------------------------------------------------------------------------}
 
