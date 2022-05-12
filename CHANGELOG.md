@@ -46,13 +46,16 @@
 
 ### Changed
 
+* apply the configured type of the `preferred-citation`
 * optimise comment banners of `CITATION.cff`
 * outsource `extract` to a dedicated function
 * outsource `skipReferences` to a dedicated function
+* set default citation type to `software`
 
 ### Fixed
 
 * add missing patterns in `Main.hs`
+* fix behaviour of `extract`
 
 ## [0.3] -- 2022-05-11
 
