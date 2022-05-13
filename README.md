@@ -112,8 +112,8 @@ relevant lines to cite.
 
 By default, the results are written to `stdout`.  This behaviour is intended to
 be a preview mode in order to verify that the correct repository is going to be
-cited.  The results can be also piped around in terminal session such that other
-CFF tools can be instructed with `cffreference`'s output.
+cited.  The extracted results can be also piped around in terminal sessions such
+that other CFF tools can be instructed with `cffreference`'s output.
 
 ```
 cffreference ./path/to/input/CITATION.cff
