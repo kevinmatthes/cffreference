@@ -134,4 +134,9 @@ license information as well as a brief information on how to use it correctly.
 cffreference
 ```
 
+Any input file will be cited by its `preferred-citation`, by default.  If this
+entry should not be specified, the whole file will be processed in order to
+generate a proper `references` item.  In the latter case, the input file is
+assumed to specify a `software`.
+
 <!----------------------------------------------------------------------------->
