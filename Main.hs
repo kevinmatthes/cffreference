@@ -228,6 +228,7 @@ preprocess  :: [String]                                                         
 preprocess []       = []
 preprocess (l:ls)   |  take 0xC l == "cff-version:" || take 0x8 l == "message:"
                     || take 0x1 l == "#" || null l
+                    || take 0x3 l == "..." || take 0x3 l == "---"
                     = preprocess ls
 
                     | take 0xB l == "references:"
