@@ -44,6 +44,14 @@
 
 ## [Unreleased]
 
+### Added
+
+* create `.github/workflows/cffconvert.yml`
+
+### Changed
+
+* adjust README description
+
 ## [0.4] -- 2022-05-12
 
 ### Changed
