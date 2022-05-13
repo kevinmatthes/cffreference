@@ -110,15 +110,15 @@ appropriately cite another project automatically.  Given an input file which is
 valid according to the Schema Version 1.2.0, `cffreference` will extract the
 relevant lines to cite.
 
-By default, the results are written to `stdout`.  This behaviour is intended to
-be a preview mode in order to verify that the correct repository is going to be
-cited.  The extracted results can be also piped around in terminal sessions such
-that other CFF tools can be instructed with `cffreference`'s output.
-
 Any input file will be cited by its `preferred-citation`, by default.  If this
 entry should not be specified, the whole file will be processed in order to
 generate a proper `references` item.  In the latter case, the input file is
 assumed to specify a `software`.
+
+By default, the results are written to `stdout`.  This behaviour is intended to
+be a preview mode in order to verify that the correct repository is going to be
+cited.  The extracted results can be also piped around in terminal sessions such
+that other CFF tools can be instructed with `cffreference`'s output.
 
 ```
 cffreference ./path/to/input/CITATION.cff
