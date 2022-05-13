@@ -51,6 +51,7 @@
 ### Changed
 
 * adjust README description
+* update `.gitignore`
 
 ## [0.4] -- 2022-05-12
 
