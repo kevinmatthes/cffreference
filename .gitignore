@@ -33,6 +33,7 @@
 
 # Build artifacts.
 build/
+cffreference
 *.a
 *.bak
 *.dll
