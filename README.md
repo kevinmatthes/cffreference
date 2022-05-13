@@ -95,4 +95,43 @@ the manual for this repository and attach the entire license to it.  The
 resulting file, `repository.pdf`, will be saved in the main directory of this
 repository.
 
+## Description
+
+A common task when working with CFF is adding another project's citation meta
+data to the own `CITATION.cff`'s `references` section.  Since these files are
+often very long -- due to having `references` to cite on their own or many
+people who contributed, for instance -- and not sorted uniformly, it might be
+a challenge to filter out all required lines by hand.  Furthermore, there can
+also be a `preferred-citation` provided which could be overseen in a quite big
+citation configuration file.
+
+In order to solve these issues, `cffreference` provides the capability to
+appropriately cite another project automatically.  Given an input file which is
+valid according to the Schema Version 1.2.0, `cffreference` will extract the
+relevant lines to cite.
+
+By default, the results are written to `stdout`.  This behaviour is intended to
+be a preview mode in order to verify that the correct repository is going to be
+cited.  The results can be also piped around in terminal session such that other
+CFF tools can be instructed with `cffreference`'s output.
+
+```
+cffreference ./path/to/input/CITATION.cff
+```
+
+In order to append the extracted citation information to a certain, writable
+`CITATION.cff`, its path must be given as the second argument to the application
+which will then add the new reference at the end of the output file.
+
+```
+cffreference ./path/to/input/CITATION.cff ./path/to/output/CITATION.cff
+```
+
+In case no arguments or more than two are given, the application will show the
+license information as well as a brief information on how to use it correctly.
+
+```
+cffreference
+```
+
 <!----------------------------------------------------------------------------->
