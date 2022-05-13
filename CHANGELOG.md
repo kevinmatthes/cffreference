@@ -44,9 +44,12 @@
 
 ## [Unreleased]
 
+## [0.5] -- 2022-05-13
+
 ### Added
 
 * create `.github/workflows/cffconvert.yml`
+* support further additional placeholders in input files
 
 ### Changed
 
