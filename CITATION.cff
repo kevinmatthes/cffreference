@@ -215,8 +215,6 @@ references:
     repository-artifact: https://github.com/kevinmatthes/docs-snippets
     title: docs-snippets
     url: https://github.com/kevinmatthes/docs-snippets
-
-################################################################################
   - type: software
     authors:
       -
@@ -239,3 +237,5 @@ references:
     license: "Apache-2.0"
     title: "cffconvert GitHub Action"
     version: 2.0.0
+
+################################################################################
