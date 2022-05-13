@@ -217,3 +217,25 @@ references:
     url: https://github.com/kevinmatthes/docs-snippets
 
 ################################################################################
+  - type: software
+    authors:
+      -
+        family-names: Spaaks
+        given-names: "Jurriaan H."
+        orcid: "https://orcid.org/0000-0002-7064-4069"
+      -
+        family-names: Diblen
+        given-names: Faruk
+        orcid: "https://orcid.org/0000-0002-0989-929X"
+      -
+        family-names: "Soares Siqueira"
+        given-names: Abel
+        orcid: "https://orcid.org/0000-0003-4451-281X"
+    date-released: 2022-01-24
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.3993241
+        description: "The work's conceptdoi"
+    license: "Apache-2.0"
+    title: "cffconvert GitHub Action"
+    version: 2.0.0
