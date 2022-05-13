@@ -133,7 +133,8 @@ cffreference ./path/to/input/CITATION.cff ./path/to/output/CITATION.cff
 ```
 
 In case no arguments or more than two are given, the application will show the
-license information as well as a brief information on how to use it correctly.
+license information as well as a brief information on how to use `cffreference`
+correctly.
 
 ```
 cffreference
