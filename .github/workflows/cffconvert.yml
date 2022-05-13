@@ -6,7 +6,7 @@ on:
 permissions:
   contents: read
 jobs:
-  validate:
+  validation:
     name: validate
     runs-on: ubuntu-latest
     steps:
