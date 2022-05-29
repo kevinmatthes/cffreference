@@ -21,52 +21,22 @@
 ################################################################################
 ##
 ##  AUTHOR      Kevin Matthes
-##  BRIEF       Settings for the Git repository.
+##  BRIEF       Settings for the Rust project.
 ##  COPYRIGHT   (C) 2022 Kevin Matthes.
 ##              This file is licensed GPL 2 as of June 1991.
 ##  DATE        2022
-##  FILE        .gitignore
+##  FILE        Cargo.toml
 ##  NOTE        See `LICENSE' for full license.
 ##              See `README.md' for project details.
 ##
 ################################################################################
 
-# Build artifacts.
-build/
-cffreference
-*.a
-*.bak
-*.dll
-*.hi
-*.lib
-*.o
-*.obj
-*.so
+[package]
+name = "cffreference"
+version = "1.0.0"
+edition = "2021"
 
-# Documentation artifacts.
-*.pdf
-
-# Cargo, Doxygen and Haddock directories.
-html/
-latex/
-target/
-
-# LaTeX artifacts.
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.fdb_latexmk
-*.fls
-*.lof
-*.log
-*.lol
-*.lot
-*.out
-*.run.xml
-*.synctex(busy)
-*.synctex.gz
-*.tdo
-*.toc
+[dependencies]
+getopts = "*"
 
 ################################################################################

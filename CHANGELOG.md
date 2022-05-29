@@ -44,6 +44,14 @@
 
 ## [Unreleased]
 
+### Added
+
+* Rust refactoring of Haskell code
+
+### Deprecated
+
+* Haskell prototype, including its build routine
+
 ## [0.5] -- 2022-05-13
 
 ### Added

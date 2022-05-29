@@ -237,5 +237,17 @@ references:
     license: "Apache-2.0"
     title: "cffconvert GitHub Action"
     version: 2.0.0
+  - type: software
+    abstract: Parses the Git history.
+    authors:
+      - alias: wert007
+        family-names: Hamacher
+        given-names: Pablo
+      - family-names: Matthes
+        given-names: Kevin
+    license: MIT
+    repository-code: https://github.com/wert007/commit-analyzer
+    title: commit-analyzer
+    url: https://github.com/wert007/commit-analyzer
 
 ################################################################################
