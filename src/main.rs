@@ -23,6 +23,37 @@
 /// This main function takes care about the application's in- and output and
 /// composes its overall behaviour.  The therefore required components are
 /// outsourced to the library crate root of this project.
-fn main() {
-    cffreference::version();
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let trigger = cffreference::Trigger::new("help", "version");
+    let version = cffreference::Version::new(1, 0, 0);
+
+    let mut options: getopts::Options = getopts::Options::new();
+    let options = options
+        .optflag("h", trigger.help(), "Show this help and exit.")
+        .optflag(
+            "v",
+            trigger.version(),
+            "Show the version information and exit.",
+        );
+
+    cffreference::Application::new(
+        &match cffreference::Configuration::parse(std::env::args(), options, &trigger) {
+            Ok(configuration) => configuration,
+            Err(getopts::Fail::UnrecognizedOption(string)) => {
+                println!(
+                "Unresolvable argument:  '{string}'.\nRerun with '--{}' for an option overview.",
+                trigger.help()
+            );
+                return Ok(());
+            }
+            Err(error) => {
+                return Err(error.into());
+            }
+        },
+        options,
+        &version,
+    )
+    .run();
+
+    Ok(())
 }
