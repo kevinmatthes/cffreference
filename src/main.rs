@@ -24,36 +24,70 @@
 /// composes its overall behaviour.  The therefore required components are
 /// outsourced to the library crate root of this project.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let trigger = cffreference::Trigger::new("help", "version");
+    let trigger = cffreference::Trigger::default();
     let version = cffreference::Version::new(1, 0, 0);
 
     let mut options: getopts::Options = getopts::Options::new();
-    let options = options
+    options
         .optflag("h", trigger.help(), "Show this help and exit.")
+        .optopt(
+            "i",
+            trigger.input(),
+            "The input file to read from.",
+            "<FILE>",
+        )
+        .optflag(
+            "l",
+            trigger.license(),
+            "Show the license information and exit.",
+        )
+        .optopt(
+            "o",
+            trigger.output(),
+            "The output file to write to.",
+            "<FILE>",
+        )
         .optflag(
             "v",
             trigger.version(),
             "Show the version information and exit.",
         );
 
-    cffreference::Application::new(
-        &match cffreference::Configuration::parse(std::env::args(), options, &trigger) {
+    match cffreference::Application::new(
+        &match cffreference::Configuration::parse(std::env::args(), &options, &trigger) {
             Ok(configuration) => configuration,
+            Err(getopts::Fail::ArgumentMissing(string)) => {
+                println!(
+                    "{}",
+                    options.usage(&format!(
+                        "No argument for option '{string}' supplied.  \
+                        Valid option calls are as follows:"
+                    ))
+                );
+                std::process::exit(cffreference::EX_USAGE);
+            }
             Err(getopts::Fail::UnrecognizedOption(string)) => {
                 println!(
-                "Unresolvable argument:  '{string}'.\nRerun with '--{}' for an option overview.",
-                trigger.help()
-            );
-                return Ok(());
+                    "{}",
+                    options.usage(&format!(
+                        "Unresolvable argument:  '{string}'.  \
+                        Valid options are as follows:"
+                    ))
+                );
+                std::process::exit(cffreference::EX_USAGE);
             }
             Err(error) => {
                 return Err(error.into());
             }
         },
-        options,
+        &options,
         &version,
     )
-    .run();
-
-    Ok(())
+    .run()
+    {
+        Ok(_) => Ok(()),
+        Err(error) => Err(error),
+    }
 }
+
+/******************************************************************************/
